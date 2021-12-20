@@ -46,13 +46,13 @@ const RandomFacts = () => {
       <ul>
         { /* renderizzo i dai presenti nello stato */ }
         { state.facts
-            .reverse()
             .map((fact, index) => 
               <li key={index}>"{fact.text}" - <a 
                 href={fact.source_url} 
                 target="_blank">source
               </a></li>
-            ) 
+            )
+            .reverse()
         }
       </ul>
     </section>
