@@ -26,7 +26,7 @@ const RandomFacts = () => {
   const endpoint = 'https://uselessfacts.jsph.pl/random.json?language=en';
   const [state, dispatch] = useReducer(reducer, initState);
 
-  // dopo aver caricato un nuovo fact dall'API dispatcho l'evento per aggiungerlo allo stato
+  // dopo aver caricato un nuovo fact dall'API avvio l'evento per aggiungerlo allo stato
   const fetchData = () => fetch(endpoint)
     .then(response => response.json())
     .then(data => dispatch({ type: 'add', payload: data }) );
@@ -40,7 +40,7 @@ const RandomFacts = () => {
     <section>
       { /* ripeto il caricamento da API + aggiornamento stato */}
       <button onClick={() => fetchData() }>Add a new fact!</button>
-      { /* dispatcho l'evento per svuotare l'array nello stato */}
+      { /* avvio l'evento per svuotare l'array nello stato */}
       <button onClick={() => dispatch({ type: 'reset' })}>Reset facts</button>
 
       <ul>
