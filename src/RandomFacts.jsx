@@ -48,7 +48,8 @@ const RandomFacts = () => {
         { state.facts
             .map((fact, index) => 
               <li key={index}>"{fact.text}" - <a 
-                href={fact.source_url} 
+                href={fact.source_url}
+                rel="noreferrer noopener" 
                 target="_blank">source
               </a></li>
             )
